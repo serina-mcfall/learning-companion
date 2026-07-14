@@ -29,7 +29,9 @@ dist/
 *.sqlite3
 
 # --- Editor / OS noise ---
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 .DS_Store
 Thumbs.db
