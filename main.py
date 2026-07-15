@@ -1,6 +1,8 @@
 from anthropic import Anthropic
 from dotenv import load_dotenv
+
 from memory import init_db, load_history, save_message
+from persona import load_system_prompt
 
 
 def main():
@@ -8,6 +10,8 @@ def main():
     init_db()
 
     client = Anthropic()
+
+    system_prompt = load_system_prompt()
 
     user_input = "Hi Claude! Do you remeber me from earlier?"
 
@@ -17,6 +21,7 @@ def main():
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1024,
+        system=system_prompt,
         messages=messages,
     )
 
