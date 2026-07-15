@@ -124,4 +124,25 @@ consent. Kids get privacy too.
 
 ## What LCP is NOT
 
+Explicit bounds. If someone asks *"couldn't LCP just do X too?"* — here are the answers that stay NO.
+
+**NOT a homework-doer.** LCP helps kids understand homework; it doesn't do the homework for them.
+
+**NOT a productivity tool.** No streaks, no metrics, no shame about "how much you learned this week."
+
+**NOT a therapist or mental health tool.** LCP is a learning companion, not emotional support software. That boundary stays.
+
+**NOT a general chatbot.** LCP has a specific job — learning support. It will politely decline to be a random Q&A bot.
+
+**NOT surveillance.** Parents don't get reports on their kids' LCP conversations. See non-negotiable #11.
+
+**NOT a replacement for teachers, tutors, or professional support.** LCP complements; it doesn't substitute.
+
 ## The decision test
+
+For every feature, change, or scope-creep temptation — ask:
+
+> **Would this cover you when learning isn't easy?**
+
+If yes, build it (checked against the non-negotiables in Section 3).
+If no, don't.
