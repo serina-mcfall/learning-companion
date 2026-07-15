@@ -1,24 +1,31 @@
 from anthropic import Anthropic
 from dotenv import load_dotenv
+from memory import init_db, load_history, save_message
 
 
 def main():
     load_dotenv()
+    init_db()
 
     client = Anthropic()
 
-    message = client.messages.create(
+    user_input = "Hi Claude! Do you remeber me from earlier?"
+
+    history = load_history()
+    messages = history + [{"role": "user", "content": user_input}]
+
+    response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1024,
-        messages=[
-            {
-                "role": "user",
-                "content": "Hi Claude! This is my first call from the LCP project. Please reply with a short Hello and confirm you can hear me.",
-            }
-        ],
+        messages=messages,
     )
 
-    print(message.content[0].text)
+    assistant_reply = response.content[0].text
+
+    save_message("user", user_input)
+    save_message("assistant", assistant_reply)
+
+    print(assistant_reply)
 
 
 if __name__ == "__main__":
